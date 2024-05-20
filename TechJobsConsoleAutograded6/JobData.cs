@@ -89,10 +89,10 @@ namespace TechJobsConsoleAutograded6
             foreach (Dictionary<string, string> row in AllJobs)
             {
                 string aValue = row[column];
-
-
+                
+                
                 //TODO: Make search case-insensitive
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
