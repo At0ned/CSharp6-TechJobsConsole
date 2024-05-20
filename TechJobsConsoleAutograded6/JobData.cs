@@ -48,17 +48,20 @@ namespace TechJobsConsoleAutograded6
             LoadData();
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            
 
             foreach (Dictionary<string, string> line in AllJobs)
-            {
-
-            foreach (KeyValuePair<string, string> word in line)
             {
                 if (jobs.Contains(line))
                 {
                     return null;
                 }
-                if (word.Value == value)
+            
+            foreach (KeyValuePair<string, string> word in line)
+            {
+                string aValue = value.ToLower();
+                string aWord = word.Value.ToLower();
+                if (aWord.Contains(aValue))
                 {
                     jobs.Add(line);
                 }
